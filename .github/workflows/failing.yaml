@@ -14,4 +14,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Always fail
-      run: echo ${{ github.event}}
+      run: echo ${{ github.job_url}}
