@@ -18,4 +18,3 @@ jobs:
           job_name: 'Workflow Fails on ArchitectureModelingFramework.RCPtest'
           url: 'https://d189-82-180-147-108.eu.ngrok.io/hooks/63928af5eed72906b185aa2a/eghR3fZJdtXQ3pbmGgaMQHwDJ3ySiWnW7xTsy4jejMPP279R' 
           #github_url: 'https://git.hub.vwgroup.com'
-        run: echo ${{ github.event.workflow_run.conclusion }}
