@@ -14,4 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Always fail
-      run: echo ${{ github.job_url}}
+      run: |
+        for job in ${{ toJson(jobs) }}; do
+          echo "$job.name Job Status: ${{ job.status }}"
+        done
