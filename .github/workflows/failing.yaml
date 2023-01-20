@@ -14,4 +14,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Always fail
-      run: exit 1
+      run: echo 'Hola'
