@@ -14,4 +14,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Always fail
-      run: echo ${{ github.event.workflow_run}}
+      run: echo ${{ github.event}}
