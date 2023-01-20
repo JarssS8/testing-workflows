@@ -1,0 +1,12 @@
+name: Always Fails
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  fail:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Always fail
+      run: exit 1

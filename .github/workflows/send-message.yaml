@@ -1,9 +1,9 @@
 name: Send Message Arche Dev
 on:
   workflow_dispatch:
-    #workflow_run:
-    #workflows: [CI ArchE RCP check - Linux]
-    #types: [completed]
+  workflow_run:
+    workflows: [Always Fails]
+    types: [completed]
     
 jobs:
   sendMessage:
@@ -12,9 +12,9 @@ jobs:
     steps:
       - name: Rocket.Chat Notification
         uses: JarssS8/Rocket.Chat.GitHub.Action.Notification@master
-          #if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+        if: ${{ github.event.workflow_run.conclusion == 'failure' }}
         with:
           type: ${{ job.status }}
           job_name: 'Workflow Fails on ArchitectureModelingFramework.RCPtest'
           url: 'https://d189-82-180-147-108.eu.ngrok.io/hooks/63928af5eed72906b185aa2a/eghR3fZJdtXQ3pbmGgaMQHwDJ3ySiWnW7xTsy4jejMPP279R' 
-          github_url: 'https://git.hub.vwgroup.com'
+          #github_url: 'https://git.hub.vwgroup.com'
