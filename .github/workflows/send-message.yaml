@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Rocket.Chat Notification
-        uses: JarssS8/Rocket.Chat.GitHub.Action.Notification@master
+        uses: JarssS8/Rocket.Chat.GitHub.Action.Notification@feature/ARCHE-2978_notify_rocketchat_when_rcptest_fails
         if: ${{ github.event.workflow_run.conclusion == 'failure' }}
         with:
           type: failure
