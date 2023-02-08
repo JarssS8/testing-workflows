@@ -16,5 +16,7 @@ jobs:
         with:
           type: failure
           job_name: 'Workflow Fails on ArchitectureModelingFramework.RCPtest'
-          url: 'https://d189-82-180-147-108.eu.ngrok.io/hooks/63928af5eed72906b185aa2a/eghR3fZJdtXQ3pbmGgaMQHwDJ3ySiWnW7xTsy4jejMPP279R' 
+          url: 'https://2282-155-133-14-195.eu.ngrok.io/hooks/63928af5eed72906b185aa2a/eghR3fZJdtXQ3pbmGgaMQHwDJ3ySiWnW7xTsy4jejMPP279R' 
+          commit: true
+          token: ${{ secrets.RC_GH_TOKEN }}
           #github_url: 'https://git.hub.vwgroup.com'
