@@ -19,4 +19,7 @@ jobs:
           url: 'https://2282-155-133-14-195.eu.ngrok.io/hooks/63928af5eed72906b185aa2a/eghR3fZJdtXQ3pbmGgaMQHwDJ3ySiWnW7xTsy4jejMPP279R' 
           commit: true
           token: ${{ secrets.RC_GH_TOKEN }}
+          additional_url: true
+          additional_url_name: 'GitHub Actions'
+          additional_url_link: 'https://www.google.com/search?client=firefox-b-d&q=github+actions'
           #github_url: 'https://git.hub.vwgroup.com'
