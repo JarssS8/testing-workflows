@@ -21,5 +21,5 @@ jobs:
           token: ${{ secrets.RC_GH_TOKEN }}
           additional_url: true
           additional_url_name: 'GitHub Actions'
-          additional_url_link: 'https://www.google.com/search?client=firefox-b-d&q=github+actions'
+          additional_url_value: 'https://www.google.com/search?client=firefox-b-d&q=github+actions'
           #github_url: 'https://git.hub.vwgroup.com'
