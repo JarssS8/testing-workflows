@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Always fail
-      run: exit 0
+      run: exit 1
