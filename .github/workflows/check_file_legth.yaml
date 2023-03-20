@@ -1,0 +1,23 @@
+name: PR File Size Check
+on:
+  pull_request:
+    types: [opened, reopened, edited, synchronize]
+
+env:
+  MAX_FILE_SIZE: 1048576 # 1 MB
+
+jobs:
+  check_file_size:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Check file size
+        run: |
+          git diff --name-only HEAD~1 HEAD | while read FILE; do
+            if [ $(wc -c < "$FILE") -gt $MAX_FILE_SIZE ]; then
+              MAX_FILE_SIZE_MB=$((MAX_FILE_SIZE / 1048576))
+              echo "::error file=$FILE::File size exceeds ${MAX_FILE_SIZE_MB} MB limit"
+              exit 1
+            fi
+          done
