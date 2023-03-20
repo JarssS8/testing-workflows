@@ -11,4 +11,5 @@ jobs:
     - name: Install Dependencies
       run: |
         git remote -v
+        git fetch
         git diff --name-only origin/trying origin/master
