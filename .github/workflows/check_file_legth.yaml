@@ -12,9 +12,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Fetch latest changes
+        run: git fetch
       - name: Check file size
         run: |
-          git diff --name-only HEAD~1..HEAD | while read FILE; do
+          git diff --name-only HEAD~1 -- HEAD | while read FILE; do
             if [ $(wc -c < "$FILE") -gt $MAX_FILE_SIZE ]; then
               MAX_FILE_SIZE_MB=$((MAX_FILE_SIZE / 1048576))
               echo "::error file=$FILE::File size exceeds ${MAX_FILE_SIZE_MB} MB limit"
