@@ -18,7 +18,7 @@ jobs:
         run: |
           git fetch
           git diff --name-only origin/${GITHUB_BASE_REF} origin/${GITHUB_HEAD_REF} | while read FILE; do
-            if [ $(wc -c < "$FILE") -gt $MAX_FILE_SIZE ]; then
+            if ! git lfs ls-files "$FILE" &> /dev/null && [ $(wc -c < "$FILE") -gt $MAX_FILE_SIZE ]; then
               MAX_FILE_SIZE_MB=$((MAX_FILE_SIZE / 1048576))
               echo "::error file=$FILE::File size exceeds ${MAX_FILE_SIZE_MB} MB limit"
               exit 1
