@@ -9,4 +9,6 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v2
     - name: Install Dependencies
-      run: git diff --name-only trying master
+      run: 
+        echo git remote -v
+        git diff --name-only trying master
