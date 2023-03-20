@@ -10,5 +10,5 @@ jobs:
       uses: actions/checkout@v2
     - name: Install Dependencies
       run: |
-        echo git remote -v
+        git remote -v
         git diff --name-only trying master
