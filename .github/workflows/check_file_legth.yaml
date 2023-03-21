@@ -16,7 +16,8 @@ jobs:
         run: git fetch
       - name: Check file size
         run: |
-          git fetch
+          git fetch origin ${GITHUB_BASE_REF}
+          git fetch origin ${GITHUB_HEAD_REF}
           git diff --name-only origin/${GITHUB_BASE_REF} origin/${GITHUB_HEAD_REF} | while read FILE; do
             if ! git lfs ls-files "$FILE" &> /dev/null && [ $(wc -c < "$FILE") -gt $MAX_FILE_SIZE ]; then
               MAX_FILE_SIZE_MB=$((MAX_FILE_SIZE / 1048576))
