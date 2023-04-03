@@ -5,7 +5,7 @@ on:
     workflows: [Always Fails]
     types: [completed]
     branches:
-      - main
+      - master
     
 jobs:
   sendMessage:
