@@ -1,0 +1,15 @@
+name: Send Message Arche Dev
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Always Fails]
+    types: [completed]
+    branches:
+      - main
+    
+jobs:
+  sendMessage:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Always fail
+      run: echo "Hola"
