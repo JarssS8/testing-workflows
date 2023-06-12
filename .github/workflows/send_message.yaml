@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Always fail
-      run: echo  ${{ github.ref_name }}
+      run: echo  ${{ github.ref_name == 'main' || github.ref_name == 'master' }}
